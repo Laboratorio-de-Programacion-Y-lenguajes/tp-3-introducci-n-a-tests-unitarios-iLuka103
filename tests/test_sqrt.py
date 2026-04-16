@@ -22,3 +22,18 @@ def test_sqrt_cuadrado_perfecto():
 # def test_sqrt_negativo():
 #     with pytest.raises(ValueError):
 #         sqrt(-4)
+
+@pytest.mark.parametrize ("a, expected",[
+
+    (0, 0.0),
+    (3, 1.7320508075688772),
+    (-3, 0)
+
+])
+
+def test_parametrizeSqrt(a, expected):
+    if (a < 0):
+        with pytest.raises(ValueError):
+            sqrt(a)
+    else: 
+        assert sqrt(a) == expected

@@ -28,13 +28,14 @@ def test_mean_lista_simple():
 
     ([5], 5),
     ([-1, -10, -5, -4, -15], -7),
-    ([1.5, 2.5, 2.7, 3.10, 5.11], 2.982)
+    ([1.5, 2.5, 2.7, 3.10, 5.11], 2.982),
+    ([], 0)
 
 ])
 
 def test_parametrizeMean(lista, expected):
-    assert mean(lista) == expected
-
-def test_listavacia():
-    with pytest.raises(ValueError):
-        mean([])
+    if (lista == []):
+        with pytest.raises(ValueError):
+            mean(lista)
+    else:
+        assert mean(lista) == expected

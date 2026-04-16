@@ -27,12 +27,13 @@ def test_div_normal():
 
     (3, 2, 1.5),
     (10, -2, -5),
+    (5, 0, 0)
 
 ])
 
 def test_parametrizeDiv(a, b, expected):
-    assert div(a, b) == expected
-    
-def test_divZero():
-    with pytest.raises(ZeroDivisionError):
-        div(10,0)
+    if (a == 0 | b == 0):
+        with pytest.raises(ZeroDivisionError):
+            div(a, b)
+    else:
+        assert div(a, b) == expected
