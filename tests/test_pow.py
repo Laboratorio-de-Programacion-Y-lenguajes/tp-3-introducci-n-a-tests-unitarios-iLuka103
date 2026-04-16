@@ -19,3 +19,15 @@ def test_pow_base_positiva():
 #   - Exponente decimal, ej: 9 ** 0.5 (raíz cuadrada)
 #
 # Pista: podés usar @pytest.mark.parametrize para probar varios casos a la vez.
+
+@pytest.mark.parametrize ("a, b, expected",[
+
+    (2, 0, 1),
+    (3, 1, 3),
+    (-5, 2, 25),
+    (4, 0.5, 2)
+
+])
+
+def test_parametrizePow(a, b, expected):
+    assert pow(a, b) == expected
