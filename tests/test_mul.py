@@ -20,3 +20,15 @@ def test_mul_positivos():
 #   - Multiplicar dos decimales (float)
 #
 # Pista: podés usar @pytest.mark.parametrize para probar varios casos a la vez.
+
+@pytest.mark.parametrize ("a, b, expected",[
+
+    (5, 0, 0),
+    (-5, -5, 25),
+    (10, -5, -50),
+    (2, 1, 2),
+    (1.5, 3.5, 5.25)
+])
+
+def test_parametrizeMul(a, b, expected):
+    assert mul(a, b) == expected
