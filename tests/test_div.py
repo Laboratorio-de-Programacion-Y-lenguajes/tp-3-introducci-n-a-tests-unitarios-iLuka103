@@ -32,7 +32,7 @@ def test_div_normal():
 ])
 
 def test_parametrizeDiv(a, b, expected):
-    if (a == 0 | b == 0):
+    if (a == 0 or b == 0):
         with pytest.raises(ZeroDivisionError):
             div(a, b)
     else:
